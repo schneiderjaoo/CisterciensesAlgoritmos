@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --primary-red: #800020;
+  --soft-gray: #ece4e4;
+  --accent-red: #a7001b;
+  --user-msg: #cc3349;
+  --system-msg: #e8eaf6;
+  --hover-blue: #0056b3;
+  --main-blue: #007bff;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--soft-gray);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#chat-container {
+  width: 100%;
+  max-width: 600px;
+  height: 550px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#chat-header {
+  background-color: var(--primary-red);
+  color: white;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fafafa;
+  border-bottom: 1px solid #ddd;
+}
+
+#chat-box .Usuário {
+  align-self: flex-end;
+  background-color: var(--user-msg);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  max-width: 80%;
+  margin: 0 0 10px auto;
+  word-wrap: break-word;
+}
+
+#chat-box .Sistema {
+  align-self: flex-start;
+  background-color: var(--system-msg);
+  color: black;
+  padding: 10px 15px;
+  border-radius: 8px;
+  max-width: 80%;
+  margin: 0 auto 10px 0;
+  word-wrap: break-word;
+}
+
+#chat-box div {
+  width: 100%;
+  display: flex;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.input-teclado {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid var(--primary-red);
+  border-radius: 6px;
+  outline: none;
+  background-color: #fff;
+  color: #333;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.input-teclado:focus {
+  border-color: var(--accent-red);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.btn-enviar,
+.clip-button {
+  margin-left: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover,
+.clip-button:hover {
+  background-color: var(--accent-red);
+}
+
+.logo {
+  margin-top: 40px;
+  width: 300px;
+  height: auto;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.numero-imagem {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.image-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.image-actions button,
+.image-actions a {
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.image-actions button:hover,
+.image-actions a:hover {
+  background-color: var(--accent-red);
+}
+
+.aux-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.aux-imagem {
+  width: calc(50% - 10px);
+  max-width: 120px;
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.loading-indicator {
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+}
+
+/* General buttons */
+button {
+  padding: 8px 15px;
+  margin-left: 10px;
+  border: none;
+  background-color: var(--main-blue);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--hover-blue);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #chat-container {
+    width: 90%;
+    height: 90vh;
+  }
+
+  .input-teclado {
+    font-size: 14px;
+  }
+
+  .btn-enviar,
+  .clip-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 200px;
+  }
+}
